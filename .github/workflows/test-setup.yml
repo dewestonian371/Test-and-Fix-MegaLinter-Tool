@@ -73,6 +73,10 @@ jobs:
           "passed=$($result.PassedCount)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
 
       - name: ✅ Tests Result
+        shell: pwsh
         run: |
-          Write-Host "Tests completed: ${{ steps.test.outputs.passed }} passed, ${{ steps.test.outputs.failed }} failed"
-          if (${{ steps.test.outputs.failed }} -ne 0) { exit 1 }
+          $output = Get-Content $env:GITHUB_OUTPUT -Raw
+          $failed = ($output -match 'failed=(\d+)') ? $matches[1] : "0"
+          $passed = ($output -match 'passed=(\d+)') ? $matches[1] : "0"
+          Write-Host "Tests completed: $passed passed, $failed failed"
+          if ($failed -ne "0") { exit 1 }
