@@ -22,12 +22,12 @@ Traditionnellement, nettoyer un fichier qui mélange balises `#`, `**`, `<data>`
 
 ### Étape 1 : Préparez votre fichier hybride
 Créez ou modifiez `test.md`. Mélangez librement Markdown et XML :
-```markdown
-# Documentation Technique
+
+## Documentation Technique
 
 Introduction au format hybride.
 
-## Payload XML
+### Payload XML
 ```xml
 <root version="1.0">
   <config>
@@ -35,7 +35,6 @@ Introduction au format hybride.
     <!-- balise manquante : </config> -->
   </config>
 </root>
-```
 ```
 
 ### Étape 2 : Soumettez-le à GitHub
@@ -74,7 +73,7 @@ Bien que souvent confondus, ces deux outils jouent des rôles complémentaires e
 
 ---
 
-## ⚙️ Comment MegaLinter gère-t-il l'hybride MD/XML ?
+## ⚙️ Comment MegaLinter gère-t-il l'hybridation MD/XML ?
 
 MegaLinter n'est ni un linter ni un formatter : c'est un **orchestrateur intelligent** qui exécute les bons outils au bon moment, sans que vous ayez à les installer.
 
