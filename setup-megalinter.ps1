@@ -34,7 +34,8 @@ param(
     [string]$ProjectRoot = "C:/Users/bbrod/Projets/Test-and-Fix-MegaLinter-Tool",
     [string]$RepoUrl = "https://github.com/valorisa/Test-and-Fix-MegaLinter-Tool.git",
     [switch]$DryRun,
-    [switch]$SkipPush
+    [switch]$SkipPush,
+    [switch]$Force
 )
 
 $ScriptName = "setup-megalinter"
