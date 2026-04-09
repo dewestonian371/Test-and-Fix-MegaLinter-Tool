@@ -2,7 +2,7 @@
 
 BeforeAll {
     $ScriptPath   = "$PSScriptRoot/setup-megalinter.ps1"
-    $TestBase     = Join-Path $env:TEMP "MegaLinter-Pester-$(Get-Random)"
+    $TestBase     = Join-Path ([System.IO.Path]::GetTempPath()) "MegaLinter-Pester-$(Get-Random)"
     $ProjectRoot  = Join-Path $TestBase "project"
     $RepoUrl      = "https://github.com/test/fake-repo.git"
 }
