@@ -1,0 +1,15 @@
+EXTENDS: https://raw.githubusercontent.com/oxsecurity/megalinter/main/flavors/documentation/mega-linter.yml
+
+DISABLE:
+  - COPYPASTE
+  - SPELL
+
+MARKDOWN_MARKDOWNLINT_ARGUMENTS: "--disable MD033"
+
+DOCKERFILE_HADOLINT_ARGUMENTS: "--failure-threshold warning"
+
+YAML_YAMLLINT_ARGUMENTS: "--failure-threshold warning"
+YAML_PRETTIER_ARGUMENTS: "--failure-threshold warning"
+
+APPLY_FIXES: none
+FLAVOR_SUGGESTIONS: false
