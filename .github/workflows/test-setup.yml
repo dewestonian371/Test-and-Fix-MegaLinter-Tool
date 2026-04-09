@@ -66,34 +66,13 @@ jobs:
           $config = New-PesterConfiguration
           $config.Run.Path = "./setup-megalinter.Tests.ps1"
           $config.Output.Verbosity = "Detailed"
-          $config.TestResult.Enabled = $true
-          $config.TestResult.OutputPath = "test-results.xml"
-          $config.TestResult.OutputFormat = "JUnitXml"
-          $config.CodeCoverage.Enabled = $true
-          $config.CodeCoverage.Path = "./setup-megalinter.ps1"
-          $config.CodeCoverage.OutputPath = "coverage.xml"
-          $config.CodeCoverage.OutputFormat = "JaCoCo"
 
           $result = Invoke-Pester -Configuration $config
 
           "failed=$($result.FailedCount)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
           "passed=$($result.PassedCount)" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
 
-      - name: 📊 Publish Test Results
-        if: success()
-        uses: dorny/test-reporter@v1
-        with:
-          name: Pester Results (${{ matrix.os }})
-          path: test-results.xml
-          reporter: java-junit
-          fail-on-error: false
-
-      - name: 📈 Upload Code Coverage
-        if: success()
-        uses: actions/upload-artifact@v4
-        with:
-          name: coverage-${{ matrix.os }}
-          path: coverage.xml
-
-      - name: ✅ All Tests Passed
-        run: echo "All ${{ matrix.os }} tests passed successfully!"
+      - name: ✅ Tests Result
+        run: |
+          Write-Host "Tests completed: ${{ steps.test.outputs.passed }} passed, ${{ steps.test.outputs.failed }} failed"
+          if (${{ steps.test.outputs.failed }} -ne 0) { exit 1 }
