@@ -220,4 +220,4 @@ Aucune garantie implicite. Testez toujours en environnement non critique avant a
 **Questions / Support** : Ouvrez une `Issue` ou contactez via les Discussions GitHub.
 
 ---
-> 🛡️ *Conçu pour que la qualité de code soit accessible à tous, pas seulement aux experts DevOps. Soumettez. Analysez. Améliorez. Répétez.*
+> 🛡️ **Conçu pour que la qualité de code soit accessible à tous, pas seulement aux experts DevOps. Soumettez. Analysez. Améliorez. Répétez.**
